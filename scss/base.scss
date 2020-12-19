@@ -1,0 +1,14 @@
+#page {
+    .header-menu {
+        a {
+            text-decoration: none;
+        }
+        a:nth-child(2)::after {
+            color: #333;
+            content: "\F107";
+            font-family: "FontAwesome";
+            line-height: 1;
+            margin-left: 0.4em;
+        }
+    }
+}

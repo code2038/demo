@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<script src="js/home-iconfont.js"></script>
+<style>
+    .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+    }
+    
+    .icon.identifier {
+        width: 4rem;
+        height: 3rem;
+        fill: #CCCCCC;
+    }
+    
+    .icon.logo {
+        fill: #e4e4e4;
+    }
+    
+    #title,
+    .item4 li {
+        font-family: "PingFangSC-Semibold", "PingFang SC Semibold", "PingFang SC", sans-serif;
+        font-weight: 650;
+        font-style: normal;
+        font-size: 18px;
+        color: #e4e4e4;
+        line-height: 70px;
+    }
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    .item1 {
+        width: 16%;
+        height: 70px;
+        background-color: #002140;
+        text-align: center;
+    }
+    
+    .item2 {
+        width: 84%;
+        height: 70px;
+        text-align: right;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #999999;
+    }
+    
+    .dropdown-menu {
+        position: relative;
+    }
+    
+    .drop-area {
+        position: absolute;
+        right: 0px;
+        display: inline-block;
+        width: 7rem;
+        line-height: 70px;
+        padding: 0px 12px;
+    }
+    
+    .drop-area>a {
+        padding: 2px;
+    }
+    
+    .dropdown-menu-list {
+        display: none;
+        position: absolute;
+        right: 0px;
+        top: 70px;
+        width: 8.5rem;
+        line-height: 1.5em;
+        text-align: center;
+        outline: 1px solid rgb(243, 243, 243);
+        z-index: 10;
+    }
+    
+    .drop-area:hover {
+        background-color: rgb(243, 243, 243);
+    }
+    
+    .dropdown-menu:hover .dropdown-menu-list {
+        display: block;
+    }
+    
+    .dropdown-menu-list li>a:hover {
+        background-color: rgb(243, 243, 243);
+    }
+    
+    .dropdown-menu-list a {
+        display: block;
+        width: 100%;
+    }
+    
+    .item3 {
+        width: 100%;
+        line-height: 50px;
+        border-bottom: 2px solid rgb(233, 233, 233);
+        border-top: 2px solid rgb(233, 233, 233);
+    }
+    
+    .item3>span:nth-child(1) {
+        color: #0079FE;
+        font-weight: 700;
+        position: relative;
+        left: 294px;
+    }
+    
+    .item3>span:nth-child(2) {
+        background-color: rgb(243, 243, 243);
+        outline: 2px solid rgb(233, 233, 233);
+        position: relative;
+        left: 1115px;
+    }
+    
+    .item4 {
+        width: 16%;
+        height: 870px;
+        background-color: #002140;
+        text-align: center;
+    }
+    
+    .item4>ul>li {
+        width: 100%;
+        padding: 0 20px;
+        margin: 0 -60px;
+    }
+    
+    .item4>ul a {
+        display: inline-block;
+        padding: 0 20px;
+        width: 100%;
+        height: 70px;
+        line-height: 70px;
+    }
+    
+    .item4 li>a:visited {
+        background-color: #0079fe;
+    }
+    
+    .item4 li>a:hover {
+        color: #ffffff;
+    }
+    
+    .item5 {
+        width: 84%;
+        position: relative;
+    }
+    
+    .item5>.line1 {
+        border: 1px solid rgb(233, 233, 233);
+        line-height: 6px;
+        margin-left: 32px;
+    }
+    
+    .item5>.line1 {
+        border-right: 0px;
+        border-top: 0px;
+    }
+    
+    .item5>.line1 .icon-container {
+        display: inline-block;
+    }
+    
+    .item5>.line1 .line1-text1 {
+        position: absolute;
+        top: -24px;
+        left: 160px;
+        padding: 18px 0;
+    }
+    
+    .item5>.line1 .line1-text2 {
+        position: absolute;
+        top: -2px;
+        left: 450px;
+        padding: 18px 0;
+        text-align: center;
+    }
+    
+    .item5>.line1 .line1-text3 {
+        position: absolute;
+        top: -2px;
+        left: 650px;
+        padding: 18px 0;
+        text-align: center;
+    }
+    
+    .item5>.line1 .line1-text4 {
+        position: absolute;
+        top: -2px;
+        left: 850px;
+        padding: 18px 0;
+        text-align: center;
+    }
+    
+    .item5>.line2 {
+        position: relative;
+        height: 84px;
+        margin: 9px 0;
+        border: 1px solid rgb(233, 233, 233);
+        text-align: center;
+        line-height: 6px;
+        margin-left: 32px;
+    }
+    
+    .item5>.line2>span {
+        position: absolute;
+        left: 15px;
+        top: 40px;
+    }
+    
+    input,
+    .status {
+        width: 9em;
+        text-align: center;
+        line-height: 48px;
+    }
+    
+    #course {
+        position: absolute;
+        left: 130px;
+        top: 18px;
+        border: 2px solid #F5F5F5;
+        border-radius: 5px;
+    }
+    
+    #teacher {
+        position: absolute;
+        left: 300px;
+        top: 18px;
+        border: 2px solid #F5F5F5;
+        border-radius: 5px;
+    }
+    
+    .drop-area.status {
+        position: absolute;
+        left: 500px;
+        top: 18px;
+        border: 2px solid #F5F5F5;
+        border-radius: 5px;
+    }
+    
+    .live-status {
+        height: 100px;
+    }
+    
+    .status-select {
+        width: 10.5em;
+        left: 500px;
+        top: 72px;
+        height: 90px;
+        padding: 0 0;
+    }
+    
+    .status-select>ul {
+        height: 100%;
+    }
+    
+    .status-select>ul>li {
+        width: 100%;
+    }
+    
+    .status-select a:hover {
+        background-color: rgb(243, 243, 243)
+    }
+    
+    #date-component {
+        width: 200px;
+        border: 2px solid #F5F5F5;
+        border-radius: 5px;
+    }
+    
+    .date-select {
+        position: absolute;
+        right: 165px;
+        top: 18px;
+    }
+    
+    #search-button {
+        width: 120px;
+        height: 52px;
+        background-color: #0079FE;
+        border: 0px;
+        border-radius: 10px;
+        position: absolute;
+        left: 226px;
+    }
+    
+    #search-button:hover {
+        background-color: #3394FE;
+    }
+    
+    .table-container {
+        margin: 30px 12px 100px 12px;
+    }
+    
+    table,
+    td,
+    th {
+        border-collapse: collapse;
+        border: 2px solid rgb(233, 233, 233);
+    }
+    
+    #show-table {
+        font-family: 微软雅黑, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        text-align: center;
+        margin: 20px 0px;
+        width: 100%;
+    }
+    
+    #show-table th {
+        background-color: #F5F5F5;
+    }
+    
+    #show-table a {
+        color: #0079FE;
+    }
+    
+    #show-table tr:nth-child(3)>td:nth-child(6) {
+        color: #F79A23;
+    }
+    
+    .item5>.line3 {
+        position: relative;
+        border: 1px solid rgb(233, 233, 233);
+        margin-left: 32px;
+    }
+    
+    .item5>.line4 {
+        margin: 100px 0px 0px 32px;
+        width: 100%;
+        outline: 1px solid rgb(233, 233, 233);
+        text-align: center;
+        line-height: 100px;
+    }
+    
+    .line4 a {
+        display: inline-block;
+        width: 2em;
+        line-height: 1.5em;
+        text-align: center;
+        outline: 1px solid rgb(233, 233, 233);
+    }
+    
+    .line4 a:nth-child(2) {
+        background-color: #0079FE;
+        color: #fff;
+    }
+    
+    .line4 input {
+        width: 2em;
+        text-align: center;
+        height: 1.5em;
+        vertical-align: middle;
+        border: 1px solid rgb(233, 233, 233);
+    }
+    
+    .item6 {
+        position: fixed;
+        bottom: 20px;
+        left: 30px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="item1">
+            <span>
+        <svg class="icon logo" aria-hidden="true">
+          <use href="#icon-logo"></use>
+        </svg>
+      </span>
+            <span id="title">教师直播系统</span>
+        </div>
+        <div class="item2">
+            <div class="dropdown-menu">
+                <div class="drop-area">
+                    <span>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#icon-user"></use>
+                      </svg>
+                    </span>
+                    <a href="#">Admin</a>
+                    <span>
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#icon-drop"></use>
+                    </svg>
+                    </span>
+
+                </div>
+                <div class="dropdown-menu-list">
+                    <ul>
+                        <li><a href="#">修改密码</a></li>
+                        <li><a href="#">退出登录</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="item3">
+            <span>|首页</span>
+            <span>
+             <svg class="icon" aria-hidden="true">
+              <use href="#icon-flush"></use>
+             </svg>刷新
+            </span>
+        </div>
+        <div class="item4">
+            <ul>
+                <li><a href="#">直播列表</a></li>
+                <li><a href="#">个人中心</a></li>
+            </ul>
+        </div>
+        <div class="item5">
+            <div class="line1">
+                <div class="icon-container">
+                    <svg class="icon identifier" aria-hidden="true">
+                    <use href="#icon-user"></use>
+                  </svg>
+                </div>
+                <div class="line1-text1">
+                    <p>
+                        <span>李老师</span>
+                    </p>
+                    <span>账号:123123123123</span>
+                </div>
+                <div class="line1-text2">
+                    <span>累计观看人次</span>
+                    <p>2000</p>
+                </div>
+                <div class="line1-text3"> <span>累计直播次数</span>
+                    <p>20</p>
+                </div>
+                <div class="line1-text4"> <span>直播时长</span>
+                    <p>00:45:00</p>
+                </div>
+            </div>
+            <div class="line2">
+                <span>输入搜索</span>
+                <input id="course" type="text" placeholder="直播名称" />
+                <input id="teacher" type="text" placeholder="教师名称" />
+                <div class="dropdown-menu live-status">
+                    <div class="drop-area status">
+                        <span>直播状态</span>
+                        <span> 
+                          <svg class="icon" aria-hidden="true">
+                            <use href="#icon-drop"></use>
+                          </svg
+                        </span>
+                    </div>
+                    <div class="dropdown-menu-list status-select">
+                        <ul>
+                            <li><a href="#">未开始</a< /li>
+                        <li><a href="#">进行中</a></li>
+                            <li><a href="#">已结束</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="date-select">
+                    <input type="date" id="date-component" />
+                    <button id="search-button">搜索</button>
+                </div>
+            </div>
+            <div class="line3">
+                <div class="table-container">
+                    <span>列表数据</span>
+                    <table id="show-table" cellpadding="10">
+                        <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>直播名称</th>
+                                <th>教师名称</th>
+                                <th>助教名称</th>
+                                <th>开始时间</th>
+                                <th>直播状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>汪教授国家动态直播</td>
+                                <td>汪非</td>
+                                <td>李老师</td>
+                                <td>2020.12.12 22:21</td>
+                                <td>未开始</td>
+                                <td>
+                                    <a href="#">复制链接</a>
+                                    <a href="#">开始直播</a>
+                                    <a href="#">数据</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>汪教授国家动态直播</td>
+                                <td>汪非</td>
+                                <td>李老师</td>
+                                <td>2020.12.12 22:21</td>
+                                <td>未开始</td>
+                                <td>
+                                    <a href="#">复制链接</a>
+                                    <a href="#">开始直播</a>
+                                    <a href="#">数据</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td>汪教授国家动态直播</td>
+                                <td>汪非</td>
+                                <td>李老师</td>
+                                <td>2020.12.12 22:21</td>
+                                <td>直播中</td>
+                                <td>
+                                    <a href="#">复制链接</a>
+                                    <a href="#">结束直播</a>
+                                    <a href="#">数据</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>004</td>
+                                <td>汪教授国家动态直播</td>
+                                <td>汪非</td>
+                                <td>李老师</td>
+                                <td>2020.12.12 22:21</td>
+                                <td>已结束</td>
+                                <td>
+                                    <a href="#">复制链接</a>
+                                    <a href="#">观看复播</a>
+                                    <a href="#">数据</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>005</td>
+                                <td>汪教授国家动态直播</td>
+                                <td>汪非</td>
+                                <td>李老师</td>
+                                <td>2020.12.12 22:21</td>
+                                <td>已结束</td>
+                                <td>
+                                    <a href="#">复制链接</a>
+                                    <a href="#">观看复播</a>
+                                    <a href="#">数据</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="line4">
+                <span>
+                    <a href="#">&lt;</a>
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">...</a>
+                    <a href="#">50</a>
+                    <a href="#">&gt;</a>
+                    跳至<input type="text" value="1"/>页
+                </span>
+            </div>
+        </div>
+        <div class="item6">
+            <span>
+                <svg class="icon" aria-hidden="true">
+                  <use href="#icon-service"></use>
+                </svg>
+              </span>
+            <span>
+                <svg class="icon" aria-hidden="true">
+                  <use href="#icon-quit"></use>
+                </svg></span>
+        </div>
+    </div>
+</body>
+
+</html>

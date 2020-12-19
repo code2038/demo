@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/iconfont.js"></script>
+  </head>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .back-picture {
+      width: 752px;
+      height: 600px;
+      margin: 0 auto;
+      background-image: url(images/login1.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .form-container {
+      width: 50%;
+      text-align: center;
+      margin: auto auto;
+    }
+
+    .title {
+      font-weight: 650;
+      font-style: normal;
+      font-size: 28px;
+      color: #089a85;
+      line-height: 32px;
+    }
+
+    #btn {
+      background-color: #36b3a1;
+      width: 381px;
+      height: 62px;
+      border: 0px solid #fff;
+      border-radius: 6px;
+      position: relative;
+      left: 19px;
+    }
+    #btn:hover {
+      background-color: #3ba898;
+    }
+    input {
+      display: inline-block;
+      border: 2px solid #dbdbdb;
+      border-radius: 6px;
+      width: 375px;
+      height: 62px;
+      margin: 28px auto;
+      text-indent: 3em;
+    }
+    input:focus {
+      outline: none;
+      border-color: #3bd399;
+    }
+    input:hover {
+      border: 2px solid #2373cf;
+    }
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+    .icon-container > span {
+      position: relative;
+      left: 51px;
+      vertical-align: middle;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="back-picture"></div>
+      <div class="form-container">
+        <img src="images/login2.png" width="auto" height="126px" />
+        <div class="title">教师登录</div>
+        <form id="login">
+          <div class="icon-container">
+            <span>
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-user"></use>
+              </svg>
+            </span>
+
+            <input
+              id="username"
+              type="text"
+              name="username"
+              placeholder="请输入用户名称"
+            />
+          </div>
+
+          <div class="icon-container">
+            <span
+              ><svg class="icon" aria-hidden="true">
+                <use href="#icon-password"></use></svg
+            ></span>
+            <input type="text" name="password" placeholder="请输入登录密码" />
+          </div>
+          <button id="btn" type="submit">登录</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
